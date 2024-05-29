@@ -26,6 +26,8 @@ export default function Sidebar() {
                     </svg>
                 </div>
                 <ul className='nav__list'>
+                    <NavItem title='Super Admin Panel' href='/admin/dashboard' />
+
                     <NavItem title='Dashboard' href='/admin/dashboard' />
 
                     <NavGroup title='Branch Counter' href='/admin/branch'>
@@ -45,13 +47,13 @@ export default function Sidebar() {
                         </ul>
                     </NavGroup>
                 </ul>
-                <ul className='nav__list'>
+                {/* <ul className='nav__list'>
                     <NavGroup title='Contact' href='/admin/contact'>
                         <ul className='nav__sub-list dropdown-body'>
                             <NavItem title='Contact Us' href='/admin/contact' cssClass="nav__sub-link" />
                         </ul>
                     </NavGroup>
-                </ul>
+                </ul> */}
 
         <ul className='nav__list'>
         <NavGroup title='Order' href='/admin/order'>
@@ -61,13 +63,13 @@ export default function Sidebar() {
         </NavGroup>
         </ul>
 
-                <ul className='nav__list'>
+                {/* <ul className='nav__list'>
                     <NavGroup title='FAQ' href='/admin/faq'>
                         <ul className='nav__sub-list dropdown-body'>
                             <NavItem title='FAQ' href='/admin/faq' cssClass="nav__sub-link" />
                         </ul>
                     </NavGroup>
-                </ul>
+                </ul> */}
                 <NavLogout />
             </nav>
         </div>
