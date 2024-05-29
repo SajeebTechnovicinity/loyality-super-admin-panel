@@ -10,6 +10,10 @@ export default function Dashboard() {
     const [qrValue, setQrValue] = useState('Hello, QR Code!');
     const branch=getCookie("branch");
 
+    
+    const app_name = getCookie('app_name');
+    const app_logo = getCookie('app_logo');
+
     const $baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     useEffect(() => {
@@ -51,6 +55,8 @@ export default function Dashboard() {
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Brand Logo</th>
+                                <th>Brand Name</th>
                                 <th>Counter Name</th>
                                 <th>Counter Branch</th>
                                 <th>Counter No</th>
@@ -64,6 +70,8 @@ export default function Dashboard() {
                             {
                                 counterList &&  counterList.map((item,index)=> (<tr key={index}>
                                     <td>{index+1}</td>
+                                    <td><img src={app_logo}></img></td>
+                                    <td>{app_name}</td>
                                     <td>{item.name}</td>
                                     <td>{item.branch.name}</td>
                                     <td>{item.counter_no}</td>
