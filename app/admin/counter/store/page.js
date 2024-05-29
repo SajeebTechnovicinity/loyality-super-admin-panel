@@ -1,7 +1,7 @@
 "use client";
-import {useEffect, useState} from "react";
 import fetchWithAuth from "@/fetchWithAuth";
 import { getCookie } from "cookies-next";
+import { useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 
 export default function Counter() {

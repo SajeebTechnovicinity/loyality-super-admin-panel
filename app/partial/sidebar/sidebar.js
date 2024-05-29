@@ -1,10 +1,25 @@
-import { getCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 import NavGroup from "./navGroup";
 import NavItem from "./navItem";
 import NavLogout from "./navLogout";
 import "./style.css";
 export default function Sidebar() {
-    const usertype=getCookie('usertype');
+    var branch = [{
+        "id": "1",
+        "name": "Technovicinity Brand",
+        "db_name": "Loyalty",
+        "db_username": "GidashAdmin",
+        "db_password": "df8MKjf7BE3DrEB3",
+    }]
+    let setData = async(e) => {
+        const {name, value} = e.target;
+
+        let obj =await branch.find(o => o.id == value);
+        console.log(obj);
+        setCookie("db_info",obj);
+    }
+
+    const usertype = getCookie('usertype');
     return (
         <div className='nav-panel-wrap'>
             <nav className='nav-panel nav'>
@@ -26,6 +41,16 @@ export default function Sidebar() {
                     </svg>
                 </div>
                 <ul className='nav__list'>
+
+                    <div className="dashboard-form__field select-field">
+                        <label>Branch</label>
+                        <select name="branch" id="" value={branch ? branch.branch : ""} onChange={setData} className="select from-element from-element" >
+                            <option value="" >Select Company</option>
+                            {branch && branch.map(item => (<option value={item.id} >{item.name}</option>))}
+                        </select>
+                    </div>
+                </ul>
+                <ul className='nav__list'>
                     <NavItem title='Super Admin Panel' href='/admin/dashboard' />
 
                     <NavItem title='Dashboard' href='/admin/dashboard' />
@@ -33,7 +58,7 @@ export default function Sidebar() {
                     <NavGroup title='Branch Counter' href='/admin/branch'>
                         <ul className='nav__sub-list dropdown-body'>
                             {/* usertype wise branch */}
-                            <NavItem title='Branch' href='/admin/branch' cssClass="nav__sub-link" />               
+                            <NavItem title='Branch' href='/admin/branch' cssClass="nav__sub-link" />
                             <NavItem title='Counter' href='/admin/counter' cssClass="nav__sub-link" />
 
                         </ul>
@@ -55,13 +80,13 @@ export default function Sidebar() {
                     </NavGroup>
                 </ul> */}
 
-        <ul className='nav__list'>
-        <NavGroup title='Order' href='/admin/order'>
-        <ul className='nav__sub-list dropdown-body'>
-        <NavItem title='Order' href='/admin/order' cssClass="nav__sub-link" />
-        </ul>
-        </NavGroup>
-        </ul>
+                <ul className='nav__list'>
+                    <NavGroup title='Order' href='/admin/order'>
+                        <ul className='nav__sub-list dropdown-body'>
+                            <NavItem title='Order' href='/admin/order' cssClass="nav__sub-link" />
+                        </ul>
+                    </NavGroup>
+                </ul>
 
                 {/* <ul className='nav__list'>
                     <NavGroup title='FAQ' href='/admin/faq'>
