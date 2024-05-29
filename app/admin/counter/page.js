@@ -15,7 +15,7 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchData = async () => {
             // Fetch data from an API or other source
-            const result = await fetch(`${$baseUrl}/api/branch-counter/`+branch);
+            const result = await fetch(`${$baseUrl}/api/counter/`);
             const data = await result.json();
             setCounterList(data)
         };

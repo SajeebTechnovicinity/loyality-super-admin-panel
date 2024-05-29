@@ -33,18 +33,30 @@ export default function Login() {
             body: JSON.stringify(info),
         });
 
+        const settings = await fetchWithAuth(`/settings`, {
+            method: "GET",
+        });
+
         const dataResponse = data;
-        console.log(data);
+        console.log(settings);
 
 
         if (dataResponse.success==true) {
-            // setCookie("authUserType", data.user.user_type);
-            setCookie("authToken", dataResponse.token);
-            setCookie("usertype",dataResponse.user.user_type);
-            setCookie("authUserName", dataResponse.user.name);
-            setCookie("authUserId", dataResponse.user._id);
-            setCookie("branch", dataResponse.user.branch);
-            router.push("admin/dashboard", { scroll: false });
+            if(dataResponse.user.user_type=="super-admin") {
+                // setCookie("authUserType", data.user.user_type);
+                setCookie("authToken", dataResponse.token);
+                setCookie("usertype",dataResponse.user.user_type);
+                setCookie("authUserName", dataResponse.user.name);
+                setCookie("authUserId", dataResponse.user._id);
+                setCookie("branch", dataResponse.user.branch);
+                setCookie("app_name", settings.data.app_name);
+                setCookie("app_logo", settings.data.app_logo);
+                router.push("admin/dashboard", { scroll: false });
+            }
+            else
+            {
+                setErrorMessage("Invalid Credentials for Super Admin");
+            }
         } else {
             setErrorMessage(data.msg);
         }
@@ -70,6 +82,7 @@ export default function Login() {
         <div className='user-page login-page'>
             
             <div className='form'>
+            <h1>Super Admin Panel</h1>
             <img src='https://res.cloudinary.com/daqxhckof/image/upload/v1711965390/Loyality/lpp-logo_xywtvd.jpg' width={150} alt='logo-light' />
             <br></br>
             <p>{errorMessage}</p>

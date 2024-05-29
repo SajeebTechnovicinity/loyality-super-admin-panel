@@ -2,8 +2,14 @@
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import fetchWithAuth from "@/fetchWithAuth";
+import { getCookie } from "cookies-next";
 export default function Dashboard() {
     const [branchList, setBranchList] = useState([]);
+
+    const app_name = getCookie('app_name');
+    const app_logo = getCookie('app_logo');
+
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -42,7 +48,9 @@ export default function Dashboard() {
                         <table className="dashboard-table">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>ID</th>                   
+                                <th>Brand Logo</th>
+                                <th>Brand Name</th>
                                 <th>Branch Name</th>
                                 <th>Branch Info</th>
                                 <th>Status</th>
@@ -52,7 +60,9 @@ export default function Dashboard() {
                             <tbody>
                             {
                                 branchList &&  branchList.map((item,index)=> (<tr key={index}>
-                                    <td>{index+1}</td>
+                                    <td>{index+1}</td>                            
+                                    <td><img src={app_logo}></img></td>
+                                    <td>{app_name}</td>
                                     <td>{item.name}</td>
                                     <td>{item.info}</td>
                                     <td className="status">{item.status?"Active":"Inactive"}</td>

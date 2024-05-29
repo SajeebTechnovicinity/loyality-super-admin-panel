@@ -31,8 +31,8 @@ export default function Sidebar() {
                     <NavGroup title='Branch Counter' href='/admin/branch'>
                         <ul className='nav__sub-list dropdown-body'>
                             {/* usertype wise branch */}
-                            { usertype=="brand-admin" && <NavItem title='Branch' href='/admin/branch' cssClass="nav__sub-link" />}                  
-                            { (usertype=="branch-admin") && <NavItem title='Counter' href='/admin/counter' cssClass="nav__sub-link" />}
+                            <NavItem title='Branch' href='/admin/branch' cssClass="nav__sub-link" />               
+                            <NavItem title='Counter' href='/admin/counter' cssClass="nav__sub-link" />
 
                         </ul>
                     </NavGroup>
