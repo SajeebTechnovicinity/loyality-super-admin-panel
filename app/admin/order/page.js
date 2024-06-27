@@ -62,8 +62,8 @@ export default function Dashboard() {
             orderList &&  orderList.map((item,index)=> (<tr key={index}>
         <td>{index+1}</td>
         <td>{convertDateFormat(item.created_at)}</td>
-        <td>{item.branch.name}</td>
-        <td>{item.counter.name}</td>
+        <td>{item.branch && item.branch.name}</td>
+        <td>{item.counter && item.counter.name}</td>
         <td>{item.user.name}</td>
         <td>{item.branch_receive}</td>
         <td>{item.technovicinity_receive}</td>
