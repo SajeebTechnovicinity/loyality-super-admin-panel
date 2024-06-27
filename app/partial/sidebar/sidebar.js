@@ -72,6 +72,14 @@ export default function Sidebar() {
                         </ul>
                     </NavGroup>
                 </ul>
+                <ul className='nav__list'>
+
+                    <NavGroup title='User List' href='/admin/user'>
+                        <ul className='nav__sub-list dropdown-body'>
+                            <NavItem title='User List' href='/admin/staff' cssClass="nav__sub-link" />
+                        </ul>
+                    </NavGroup>
+                </ul>
                 {/* <ul className='nav__list'>
                     <NavGroup title='Contact' href='/admin/contact'>
                         <ul className='nav__sub-list dropdown-body'>
