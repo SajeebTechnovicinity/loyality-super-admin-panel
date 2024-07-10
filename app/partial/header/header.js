@@ -7,7 +7,7 @@ export default function Header() {
             <div className='flex-ctr'>
                
                 <a href='#' className=''>
-                    <img src='https://res.cloudinary.com/daqxhckof/image/upload/v1711965390/Loyality/lpp-logo_xywtvd.jpg' width={150} alt='logo-light' />
+                    <img src='https://res.cloudinary.com/daqxhckof/image/upload/v1720603791/Loyality/LoyaltyPayPoints_utpc3d.png' width={30} alt='logo-light' />
                 </a>
 
             </div>

@@ -83,7 +83,7 @@ export default function Login() {
             
             <div className='form'>
             <h1>Super Admin Panel</h1>
-            <img src='https://res.cloudinary.com/daqxhckof/image/upload/v1711965390/Loyality/lpp-logo_xywtvd.jpg' width={150} alt='logo-light' />
+            <img src='https://res.cloudinary.com/daqxhckof/image/upload/v1720603791/Loyality/LoyaltyPayPoints_utpc3d.png' width={150} alt='logo-light' />
             <br></br>
             <p>{errorMessage}</p>
                 <form className='login-form' onSubmit={(e) => submitForm(e)}>
