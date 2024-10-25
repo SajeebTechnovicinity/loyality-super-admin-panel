@@ -26,6 +26,26 @@ export default function Dashboard() {
     fontSize: "16px",
   };
 
+  //handle block unblock
+  const handleBlock = async (id) => {
+    let result;
+    
+    console.log(id);
+    
+    result = await fetchWithAuth(`user/block/${id}`);
+    console.log(result);
+
+    if (result.success) {
+      const newStaffList = staffList.map((item) => {
+        if (item._id === id) {
+          item.status = !item.status;
+        }
+        return item;
+      });
+      setStaffList(newStaffList);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       // Fetch data from an API or other source
@@ -103,6 +123,12 @@ export default function Dashboard() {
                             >
                               Edit
                             </Link>
+                            <button
+                              onClick={() => handleBlock(item._id)}
+                              className="px-4 py-2 mx-1 bg-main text-white rounded"
+                            >
+                              {item.status ? "Block" : "Unblock"}
+                            </button>
                           </td>
                         </tr>
                       );

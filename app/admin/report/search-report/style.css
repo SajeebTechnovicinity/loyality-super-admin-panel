@@ -1,0 +1,18 @@
+.search-report{
+	display: flex;
+	gap: 10px;
+	vertical-align: bottom;
+	padding-bottom: 20px;
+}
+
+.search-report .form-submit{
+	margin-top: 23px;
+}
+
+.search-report .from-field .from-element-text{
+	padding: 7px 12px;
+}
+
+.search-report .form-submit button{
+	padding: 11px 35px;
+}
