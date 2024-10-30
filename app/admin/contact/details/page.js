@@ -19,7 +19,9 @@ export default function Counter() {
 
   async function setContact() {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact/${id}`);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact/${id}`
+      );
       if (response && response.ok) {
         const data = await response.json();
         setStore((old) => ({
@@ -80,43 +82,52 @@ export default function Counter() {
       </div>
       <div className="dashboard-main-content-wrap">
         <div className="dashboard-main-content">
-          <form onSubmit={storeData} className="form-row col-3">
-            <div className="from-field">
-              <label>Name</label>
-              <input
-                name="name"
-                value={store.name}
-                className="from-element from-element-text"
-                onChange={setData}
-                type="text"
-                readOnly
-              />
-            </div>
+          <form onSubmit={storeData} className="form-card">
+            <div className="card-body">
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">Name</label>
+                <div className="col-md-8">
+                  <input
+                    name="name"
+                    value={store.name}
+                    className="from-element from-element-text form-control"
+                    onChange={setData}
+                    type="text"
+                    readOnly
+                  />
+                </div>
+              </div>
 
-            <div className="from-field">
-              <label>Email</label>
-              <input
-                name="email"
-                value={store.email}
-                className="from-element from-element-text"
-                onChange={setData}
-                type="text"
-              />
-            </div>
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">Email</label>
+                <div className="col-md-8">
+                  <input
+                    name="email"
+                    value={store.email}
+                    className="from-element from-element-text form-control"
+                    onChange={setData}
+                    type="text"
+                  />
+                </div>
+              </div>
 
-            <div className="from-field">
-              <label>Message</label>
-              <textarea
-                name="message"
-                value={store.message}
-                className="from-element from-element-text"
-                onChange={setData}
-              />
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">Message</label>
+                <div className="col-md-8">
+                  <textarea
+                    name="message"
+                    value={store.message}
+                    className="from-element from-element-text form-control"
+                    onChange={setData}
+                  />
+                </div>
+              </div>
+              {/*  <div className="form-group row">
+                <div className="form-submit col-md-8 col-md-offset-3">
+                  <button type="submit">Submit</button>
+                </div>
+              </div> */}
             </div>
-
-            {/* <div className="form-submit">
-              <button type="submit">Submit</button>
-            </div> */}
           </form>
         </div>
       </div>

@@ -29,9 +29,9 @@ export default function Dashboard() {
   //handle block unblock
   const handleBlock = async (id) => {
     let result;
-    
+
     console.log(id);
-    
+
     result = await fetchWithAuth(`user/block/${id}`);
     console.log(result);
 
@@ -40,6 +40,7 @@ export default function Dashboard() {
         if (item._id === id) {
           item.status = !item.status;
         }
+
         return item;
       });
       setStaffList(newStaffList);
@@ -82,8 +83,6 @@ export default function Dashboard() {
       </div>
       <div className="dashboard-content__title-bar title-bar flex-ctr-spb">
         <h3 className="title">User List</h3>
-
-        
       </div>
       <div className="dashboard-main-content-wrap">
         <div className="dashboard-main-content">
@@ -103,35 +102,36 @@ export default function Dashboard() {
               <tbody>
                 {staffList &&
                   staffList.map((item, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{item.name}</td>
-                          <td>{item.phone}</td>
-                          <td>{item.email}</td>
-                          <td>{item.user_type}</td>
-                          <td className="status">
-                            {item.status ? "Active" : "Inactive"}
-                          </td>
-                          <td>
-                            <Link
-                              href={{
-                                pathname: "/admin/staff/edit",
-                                query: { id: item._id }, // Add your parameters here
-                              }}
-                              className="px-4 py-2 mx-1 bg-main text-white rounded"
-                            >
-                              Edit
-                            </Link>
-                            <button
-                              onClick={() => handleBlock(item._id)}
-                              className="px-4 py-2 mx-1 bg-main text-white rounded"
-                            >
-                              {item.status ? "Block" : "Unblock"}
-                            </button>
-                          </td>
-                        </tr>
-                      );
+                    return (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{item.name}</td>
+                        <td>{item.phone}</td>
+                        <td>{item.email}</td>
+                        <td>{item.user_type}</td>
+                        <td className="status">
+                          {item.status ? "Active" : "Inactive"}
+                        </td>
+                        <td>
+                          <Link
+                            href={{
+                              pathname: "/admin/staff/edit",
+                              query: { id: item._id }, // Add your parameters here
+                            }}
+                            className="px-4 py-2 mx-1 bg-main text-white rounded"
+                          >
+                            Edit
+                          </Link>
+                          <span> </span>
+                          <button
+                            onClick={() => handleBlock(item._id)}
+                            className="px-4 py-2 mx-1 bg-main text-white rounded action-btn"
+                          >
+                            {item.status ? "Block" : "Unblock"}
+                          </button>
+                        </td>
+                      </tr>
+                    );
                   })}
               </tbody>
             </table>

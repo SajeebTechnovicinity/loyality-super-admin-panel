@@ -1,4 +1,3 @@
-
 /******************************
 *	   Custom Properties
 ********************************/
@@ -100,7 +99,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-right: 170px;
 }
 
-.header__logo img{
+.header__logo img {
   width: 29px;
 }
 
@@ -292,6 +291,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .nav-panel {
   max-height: 100%;
   padding-top: 2px;
+  padding-bottom: 55px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #4d6486 var(--dark-color);
@@ -342,8 +342,20 @@ input[type="number"]::-webkit-outer-spin-button {
   display: none;
 }
 
-.nav__sub-list .nav__sub-link{
-  padding-left: 35px;
+.nav__sub-list .nav__sub-link {
+  padding-left: 50px;
+  position: relative;
+}
+
+.nav__sub-list .nav__sub-link::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 25px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 
 .nav__sub-link {
@@ -361,7 +373,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .nav__sub-link.active-link,
 .nav__sub-link:hover,
 .trigger-active > .nav__sub-link {
-  background-color: rgba(77,100,134, .5);
+  background-color: rgba(77, 100, 134, 0.5);
 }
 
 .dropdown .nav__link::after {
@@ -384,7 +396,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .nav__link:hover,
 .dropdown-active .nav__link,
-.nav__link.active-link{
+.nav__link.active-link {
   background-color: #4d6486;
 }
 
@@ -1277,17 +1289,17 @@ input[type="number"]::-webkit-outer-spin-button {
 *           Form Style
 /***********************************/
 
-.form-row{
+.form-row {
   display: grid;
   margin-bottom: 30px;
 }
 
-.form-row.col-3{
+.form-row.col-3 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
-.form-row.col-2{
+.form-row.col-2 {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
 }
@@ -1302,7 +1314,7 @@ input[type="number"]::-webkit-outer-spin-button {
   color: var(--primary-color);
 }
 
-.from-field .from-element-textarea{
+.from-field .from-element-textarea {
   padding: 9px 12px;
   font-size: 14px;
   line-height: 1.2;
@@ -1316,7 +1328,7 @@ input[type="number"]::-webkit-outer-spin-button {
   resize: vertical;
 }
 
-.from-field .from-element-file{
+.from-field .from-element-file {
   padding: 9px 12px;
   font-size: 14px;
   line-height: 1.2;
@@ -1369,20 +1381,45 @@ input[type="number"]::-webkit-outer-spin-button {
 .loader {
   width: 30px;
   height: 30px;
-  border: 5px solid #FFF;
+  border: 5px solid #fff;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  }
+}
 
-  @keyframes rotation {
+@keyframes rotation {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  }
+}
+
+.nav-panel .select-wrap {
+  /* width: 100%; */
+  margin: 20px 20px 0;
+}
+
+.nav-panel .select-wrap .select {
+  /* display: block; */
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.nav-panel .select-field::after,
+.nav-panel .select-field::before,
+.nav-panel .select-wrap::after {
+  display: none;
+}
+
+.max-width-200 {
+  max-width: 200px;
+  white-space: wrap !important;
+  line-height: 1.4;
+  word-wrap: break-word;
+}

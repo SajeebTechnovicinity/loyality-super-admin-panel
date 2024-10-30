@@ -114,46 +114,59 @@ export default function Form() {
       </div>
       <div className="dashboard-main-content-wrap">
         <div className="dashboard-main-content">
-          <form onSubmit={storeData}>
-            <div className="form-row col-3">
-                <div className="from-field">
-                    <label>Branch Receive (Percentage)</label>
-                    <input
+          <form onSubmit={storeData} className="form-card">
+            <div className="card-body">
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">
+                  Branch Receive (Percentage)
+                </label>
+                <div className="col-md-8">
+                  <input
                     name="branch_receive"
-                    className="from-element from-element-text"
+                    className="from-element from-element-text form-control"
                     value={store.branch_receive}
                     onChange={handleChange}
                     type="text"
                     required
-                    />
+                  />
                 </div>
-                <div className="from-field">
-                    <label>Money to Points (Percentage)</label>
-                    <input
+              </div>
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">
+                  Money to Points (Percentage)
+                </label>
+                <div className="col-md-8">
+                  <input
                     name="money_to_points"
-                    className="from-element from-element-text"
+                    className="from-element from-element-text form-control"
                     value={store.money_to_points}
                     onChange={handleChange}
                     type="text"
                     required
-                    />
+                  />
                 </div>
-                <div className="from-field">
-                    <label>Points to Money (Percentage)</label>
-                    <input
+              </div>
+              <div className="form-group row">
+                <label className="col-md-3 col-from-label">
+                  Points to Money (Percentage)
+                </label>
+                <div className="col-md-8">
+                  <input
                     name="points_to_money"
-                    className="from-element from-element-text"
+                    className="from-element from-element-text form-control"
                     value={store.points_to_money}
                     onChange={handleChange}
                     type="text"
                     required
-                    />
+                  />
                 </div>
-              
+              </div>
 
-            </div>
-            <div className="form-submit">
-              <button type="submit">Submit</button>
+              <div className="col-md-8">
+                <div className="form-submit">
+                  <button type="submit">Submit</button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

@@ -43,30 +43,74 @@ export default function Sidebar() {
           </svg>
         </div>
         <ul className="nav__list">
-          <div className="dashboard-form__field select-field">
-            <label>Branch</label>
-            <select
-              name="branch"
-              id=""
-              value={branch ? branch.branch : ""}
-              onChange={setData}
-              className="select from-element from-element"
-            >
-              <option value="">Select Company</option>
-              {branch &&
-                branch.map((item) => (
-                  <option value={item.id}>{item.name}</option>
-                ))}
-            </select>
+          <div className="select-field">
+            {/* <label>Branch</label> */}
+            <div className="select-wrap">
+              <select
+                name="branch"
+                id=""
+                value={branch ? branch.branch : ""}
+                onChange={setData}
+                className="select from-element from-element"
+              >
+                <option value="">Select Company</option>
+                {branch &&
+                  branch.map((item) => (
+                    <option value={item.id}>{item.name}</option>
+                  ))}
+              </select>
+            </div>
           </div>
         </ul>
         <ul className="nav__list">
           <NavItem title="Super Admin Panel" href="/admin/dashboard" />
 
-          <NavItem title="Dashboard" href="/admin/dashboard" />
+          <NavItem
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            }
+
+            title="Dashboard"
+            href="/admin/dashboard"
+          />
 
           <ul className="nav__list">
-            <NavGroup title="Brand" href="/admin/brand">
+            <NavGroup
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z" />
+                  <path d="M3 16h18" />
+                </svg>
+              }
+
+              title="Brand"
+              href="/admin/brand"
+            >
               <ul className="nav__sub-list dropdown-body">
                 <NavItem
                   title="Brand"
@@ -77,7 +121,27 @@ export default function Sidebar() {
             </NavGroup>
           </ul>
           <ul className="nav__list">
-            <NavGroup title="Configuration" href="/admin/configuration">
+            <NavGroup
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+              }
+
+              title="Configuration"
+              href="/admin/configuration"
+            >
               <ul className="nav__sub-list dropdown-body">
                 <NavItem
                   title="Configuration"
@@ -88,7 +152,27 @@ export default function Sidebar() {
             </NavGroup>
           </ul>
 
-          <NavGroup title="Branch Counter" href="/admin/branch">
+          <NavGroup
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 3v18h18" />
+                <path d="M7 17l4-4 4 4 4-4" />
+              </svg>
+            }
+
+            title="Branch Counter"
+            href="/admin/branch"
+          >
             <ul className="nav__sub-list dropdown-body">
               {/* usertype wise branch */}
               <NavItem
@@ -105,7 +189,29 @@ export default function Sidebar() {
           </NavGroup>
         </ul>
         <ul className="nav__list">
-          <NavGroup title="Staff List" href="/admin/staff">
+          <NavGroup
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            }
+
+            title="Staff List"
+            href="/admin/staff"
+          >
             <ul className="nav__sub-list dropdown-body">
               <NavItem
                 title="Staff List"
@@ -116,7 +222,23 @@ export default function Sidebar() {
           </NavGroup>
         </ul>
         <ul className="nav__list">
-          <NavGroup title="User List" href="/admin/user">
+          <NavGroup
+            icon={
+              <svg
+                fill="currentColor"
+                width="22px"
+                height="22px"
+                viewBox="0 0 256 256"
+                id="Flat"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M148,80a4.0002,4.0002,0,0,1,4-4h96a4,4,0,0,1,0,8H152A4.0002,4.0002,0,0,1,148,80Zm100,44H152a4,4,0,0,0,0,8h96a4,4,0,0,0,0-8Zm0,48H176a4,4,0,0,0,0,8h72a4,4,0,0,0,0-8ZM145.85742,191.00293a3.9998,3.9998,0,1,1-7.74707,1.99414,60.02112,60.02112,0,0,0-116.2207,0,3.9998,3.9998,0,1,1-7.74707-1.99414,67.92968,67.92968,0,0,1,45.65381-47.93555,44,44,0,1,1,40.40722,0A67.92968,67.92968,0,0,1,145.85742,191.00293ZM80,140a36,36,0,1,0-36-36A36.04061,36.04061,0,0,0,80,140Z" />
+              </svg>
+            }
+
+            title="User List"
+            href="/admin/user"
+          >
             <ul className="nav__sub-list dropdown-body">
               <NavItem
                 title="User List"
@@ -127,7 +249,30 @@ export default function Sidebar() {
           </NavGroup>
         </ul>
         <ul className="nav__list">
-          <NavGroup title="Contact List" href="/admin/contact">
+          <NavGroup
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <circle cx="9" cy="10" r="2" />
+                <path d="M15 8h3" />
+                <path d="M15 12h3" />
+                <path d="M6 16h12" />
+              </svg>
+            }
+
+            title="Contact List"
+            href="/admin/contact"
+          >
             <ul className="nav__sub-list dropdown-body">
               <NavItem
                 title="Contact List"
@@ -146,7 +291,28 @@ export default function Sidebar() {
                 </ul> */}
 
         <ul className="nav__list">
-          <NavGroup title="Order" href="/admin/order">
+          <NavGroup
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            }
+
+            title="Order"
+            href="/admin/order"
+          >
             <ul className="nav__sub-list dropdown-body">
               <NavItem
                 title="Order"
@@ -170,7 +336,30 @@ export default function Sidebar() {
         </ul> */}
 
         <ul className="nav__list">
-          <NavGroup title="Report" href="/admin/faq">
+          <NavGroup
+            icon={
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <line x1="10" y1="9" x2="8" y2="9" />
+              </svg>
+            }
+
+            title="Report"
+            href="/admin/faq"
+          >
             <ul className="nav__sub-list dropdown-body">
               <NavItem
                 title="Branch Report"
