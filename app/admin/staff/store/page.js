@@ -160,13 +160,9 @@ export default function Counter() {
                       className="select from-element select-field  from-element-text form-control"
                     >
                       <option value="">Select</option>
-                      <option value="employee">Employee</option>
-                      {usertype == "brand-admin" && (
-                        <option value="branch-admin">Branch Admin</option>
-                      )}
-                      {usertype == "brand-admin" && (
-                        <option value="brand-admin">Brand Admin</option>
-                      )}
+                      <option value="employee">Employee</option>        
+                        <option value="branch-admin">Branch Admin</option>            
+                        <option value="brand-admin">Brand Admin</option>      
                     </select>
                   </div>
                 </div>

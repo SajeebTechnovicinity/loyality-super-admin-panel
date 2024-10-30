@@ -32,7 +32,6 @@ export default function Dashboard() {
             <table className="dashboard-table">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Action</th>
@@ -42,7 +41,6 @@ export default function Dashboard() {
                 {contactList &&
                   contactList.map((item, index) => (
                     <tr key={index}>
-                      <td>{index + 1}</td>
                       <td>
                         {item.first_name} {item.last_name}
                       </td>

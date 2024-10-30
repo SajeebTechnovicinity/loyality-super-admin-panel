@@ -14,28 +14,31 @@ export default function Form() {
 
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // Fetch data from an API or other source
-        const result = await fetchWithAuth("brand");
-        console.log(result.data);
 
-        setData((prevData) => ({
-          ...prevData,
-          name: result.data.name,
-          logo: result.data.logo,
-          previous_logo: result.data.logo,
-        }));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
-    };
+  const fetchData = async () => {
+    try {
+      // Fetch data from an API or other source
+      const result = await fetchWithAuth("brand");
+      console.log(result.data);
+
+      setData((prevData) => ({
+        ...prevData,
+        name: result.data.name,
+        logo: result.data.logo,
+        previous_logo: result.data.logo,
+      }));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
+  };
+
+  useEffect(() => {
+   
 
     fetchData();
   }, []);
@@ -83,6 +86,8 @@ export default function Form() {
           text: "Brand updated successfully",
           icon: "success",
         });
+        fetchData();
+        
       } else {
         Swal.fire({
           title: "Error",

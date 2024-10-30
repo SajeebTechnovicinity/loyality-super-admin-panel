@@ -51,7 +51,7 @@ export default function Dashboard() {
                   <th>Customer</th>
                   <th>Total Branch Amount</th>
                   <th>Total Admin Amount</th>
-                  <th>Action</th>
+                  {/* <th>Action</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -65,7 +65,7 @@ export default function Dashboard() {
                       <td>{item.user.name}</td>
                       <td>{item.branch_receive}</td>
                       <td>{item.technovicinity_receive}</td>
-                      <td>
+                      {/* <td>
                         <a href="#" className="edit-row">
                           <svg
                             width="24"
@@ -101,7 +101,7 @@ export default function Dashboard() {
                             />
                           </svg>
                         </a>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
               </tbody>
