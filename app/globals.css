@@ -854,6 +854,11 @@ input[type="number"]::-webkit-outer-spin-button {
   stroke: var(--primary-color);
 }
 
+.dashboard-table tbody td a svg {
+  height: 17px;
+  width: 17px;
+}
+
 .dashboard-table th {
   padding: 10px 16px;
   color: #002252;
