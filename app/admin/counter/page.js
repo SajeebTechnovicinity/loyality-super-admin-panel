@@ -127,7 +127,7 @@ export default function Dashboard() {
               </tbody>
             </table>
 
-            <div className="dashboard-table-pagination flex-ctr-spb">
+            {/* <div className="dashboard-table-pagination flex-ctr-spb">
               <form action="#" className="flex-ctr show-rows">
                 <label htmlFor="show-rows" className="label">
                   Show Rows
@@ -213,7 +213,7 @@ export default function Dashboard() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
