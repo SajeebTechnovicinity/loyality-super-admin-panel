@@ -849,10 +849,10 @@ input[type="number"]::-webkit-outer-spin-button {
 .dashboard-table tbody td a path {
   transition: 0.3s;
 }
-
+/* 
 .dashboard-table tbody td a:hover path {
   stroke: var(--primary-color);
-}
+} */
 
 .dashboard-table tbody td a svg {
   height: 17px;
