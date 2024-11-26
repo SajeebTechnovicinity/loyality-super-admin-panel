@@ -846,6 +846,11 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 0 3px;
 }
 
+.dashboard-table tbody td a.edit-row,
+.dashboard-table tbody td a.delete-row{
+  padding: 6px  8px !important;
+}
+
 .dashboard-table tbody td a path {
   transition: 0.3s;
 }
